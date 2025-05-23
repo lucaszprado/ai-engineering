@@ -64,7 +64,7 @@ Never begin coding, planning, or refactoring without reading all of the above fi
 
 ---
 
-## 🧭 Planner Mode
+## 🧭 `/plan` Command – Planner Mode
 
 When asked to enter "Planner Mode" or when receiving a `/plan` command, follow the process below:
 
@@ -112,9 +112,9 @@ After completing each phase/step:
 
 ---
 
-## 🔧 Act Mode
+## 🔧 `/act` Command – Act Mode
 
-Act Mode is triggered when you're asked to perform a concrete task that doesn’t require full planning (e.g., quick fixes, scoped edits, polish).
+When given a task or when receiving a `/act` command, follow the streamlined execution workflow:
 
 ```mermaid
 flowchart TD
@@ -137,17 +137,19 @@ flowchart TD
    - **Update `progress.md`** to reflect changes.
    - **Log decisions** or relevant notes in `activeContext.md` or `.cursor/rules`.
 
-### 🧠 Acting (Verbatim Directive)
+---
+
+### 🧠 `/act` (Verbatim Directive)
 
 When the `/act` command is received:
 
-1. Assume that planning is either unnecessary or already complete.
-2. Immediately begin Act Mode workflow:
-   - Confirm `activeContext.md` and `progress.md` are up to date.
-   - Validate scope with the user if there’s ambiguity.
-   - Execute the task carefully.
-   - Document outcome in `progress.md`.
-   - Log any key decisions in `activeContext.md` or `.cursor/rules`.
+- Assume that planning is either unnecessary or already complete.
+- Immediately begin Act Mode workflow:
+  - Confirm `activeContext.md` and `progress.md` are up to date.
+  - Validate scope with the user if there’s ambiguity.
+  - Execute the task carefully.
+  - Document outcome in `progress.md`.
+  - Log any key decisions in `activeContext.md` or `.cursor/rules`.
 
 Do **not** ask planning questions. If uncertain about scope or decision, stop and ask for clarification instead of continuing.
 
