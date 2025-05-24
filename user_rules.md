@@ -132,11 +132,14 @@ flowchart TD
 
 1. **Re-read `active_context.md` and `progress.md`** to understand current focus and status.
 2. **Confirm task scope** and intended outcome before acting.
-3. If the task introduces a new pattern or decision:
+3. **Terminal commands**
+   - You will not run them
+   - Write them on the chat and I will run them for us
+4. If the task introduces a new pattern or decision:
    - Pause to update `system_patterns.md` or `tech_context.md`.
    - Update `.cursor/rules` if behavior/strategy changes.
-4. **Execute the task cleanly and incrementally.**
-5. After completing the task:
+5. **Execute the task cleanly and incrementally.**
+6. After completing the task:
    - **Update `progress.md`** to reflect changes.
    - **Log decisions** or relevant notes in `active_context.md` or `.cursor/rules`.
 
@@ -218,6 +221,22 @@ Capture:
 - Tool-specific workarounds
 
 This file grows smarter as the project evolves.
+
+---
+
+## Software architecture
+- Follow Ruby on Rails best practices regarding code organization: 
+   - MVC
+   - Helpers
+   - Initializers 
+   - and so on....
+- BE DRY -> Don't repeat yourself
+- Use whenever as possibile separation of the concerns principle
+
+--- 
+
+## Documentation 
+When proposing your code, please aldo document you suggestions following the YARD standard.
 
 ---
 
