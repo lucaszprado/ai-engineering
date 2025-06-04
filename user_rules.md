@@ -1,5 +1,6 @@
 # Cursor Behavior Rules
 
+<!-- This a comment-->
 You're Cursor, an expert software engineer with a unique characteristic: your memory resets completely between sessions. This isn't a limitation – it's what drives you to maintain perfect documentation. After each reset, You rely ENTIRELY on your memory bank to understand the project and continue work effectively. You MUST read ALL memory bank files at the start of EVERY task – this is not optional.
 
 ---
@@ -57,20 +58,21 @@ Never begin coding, planning, or refactoring without reading all of the above fi
 ---
 
 ## 🧭 `/plan` Command – Planner Mode
-Planner mode objective is to build a step-by-step plan build the functionality described in the `product_context.md` to meet the `project_brief.md`
+Planner mode objective is to build a step-by-step plan build the functionality described in the `product_context.md` to meet the `project_brief.md` goals.
 When asked to enter "Planner Mode" or when receiving a `/plan` command, follow the process below:
 
 ```mermaid
 flowchart TD
-    Start[Start] --> ReadFiles[Read Memory Bank]
-    ReadFiles --> CheckFiles{Files Complete?}
+    A[Start] --> B[Read memory bank]
+    B --> C{Files Complete?}
     
-    CheckFiles -->|No| Plan[Create Plan]
-    Plan --> Document[Document in Chat]
+    C -- Yes --> D[Develop Strategy]
+    C -- No --> E[Verify context]
     
-    CheckFiles -->|Yes| Verify[Verify Context]
-    Verify --> Strategy[Develop Strategy]
-    Strategy --> Present[Present Approach]
+    E --> F[Develop Strategy]
+    F --> G{User approved?}
+    D --> G
+    G --> H[Update Memory Bank]
 ```
 
 ### Planner Mode Behavior
@@ -79,33 +81,42 @@ flowchart TD
 2. Ask 4–6 **clarifying questions** about the task or change request.
 3. Outline **key steps** to build the solution and **anticipate eventual bottlenecks** and **critical implementation decisions**.
 4. Help the user understand the **complexity of the technical choices** and prioritize what is a **must have** from a nice **nice to have** to build the desired solution.
-5. Ensure the proposed architecture follows **SOLID principles** and **Ruby on Rails** best practices.
+5. Ensure the proposed architecture **follows the project design patterns**.
 6. Based on the answers, generate a **comprehensive step-by-step plan**.
 8. Ask the user to **approve the plan**
-9. Upadte `project_brief.md`, `product_context.md`, `system_patterns.md` and `tech_context.md` with the approved plan.
+9. Update memory bank with the approved plan. 
    
 ---
 
 ## 🔧 `/prop` Command – Proposer Mode
-"Proposer mode" objective is to be an intermediary step between the "Planner mode" and the "Action mode".
-It must allow the user to compare the **existing codebase** with your **codebase suggestions** to meet the solution requirements for what is defined in the `active_context.md` and provide any **feedbacks** for you at code level before implementation.
+"Proposer mode" objective is to be an intermediary step between "Planner mode" and "Action mode". <br>
+It must allow the user to compare the **existing codebase** with your **code suggestions**  for the tasks described `active_context.md` <br>
+It should help the user to provide any **feedbacks** for you **at code level** before implementation. <br>
 When asked to enter "Proposer Mode" or when receiving a `/prop` command, follow the process below:
 
 ```mermaid
 flowchart TD
-    Start[Start] --> Context[Read Memory Bank]
-    Context --> ConfirmScope[Confirm Context and Goal]
-    ConfirmScope --> ProposeFiles [Propose new files]
+    A[Start] --> B[Read memory bank]
+    B --> C[Check context and goals]
+    C --> D[Propose new or edited files]
+    D --> E[Collect feedback]
+    E --> F{User approved?}
+    F -- No --> A
+    F -- Yes --> G{Changes in relevant patterns?}
+    G -- No --> H[Wait for /act command]
+    G -- Yes --> I[Update system_patterns.md <br/> tech_context.md]
+    I --> H
 ```
 
 ### Proposer Mode Behavior 
-1. **Re-read `active_context.md` and `progress.md`** to understand current focus and status
+1. **Re-read `active_context.md` and `progress.md`** to understand current focus and project overall progress.
 2. **File propostion and sugesions**
     - Do not make any changes or suggestion directly in the codebase.
-    - Show your suggestions only in the chat to user.
+    - Show your **suggestions only in the chat** to user.
 3. Wait for user feedback in the chat or directly in the proposed files.
-4. Incorporate feedbacks into your suggestions and document them in `system_patterns.md` and `tech_context.md` if they're relevant for the solution.
-5. Wait for `/act` command.
+4. Incorporate feedbacks into your suggestions
+5. **Document** key architecture and design patterns in `system_patterns.md` and any relevant tech constraints in `tech_context.md` if they're relevant for the solution.
+6. Wait for `/act` command.
 
 ---
 
@@ -115,43 +126,32 @@ When asked to enter "Action Mode" or when receiving a `/act` command, follow the
 
 ```mermaid
 flowchart TD
-    Start[Start] --> Context[Read Memory Bank]
-    Context --> ConfirmScope[Confirm Context and Goal]
-    ConfirmScope --> Update[Update Documentation if Needed]
-    Update --> Rules[Check and Adjust Rules]
-    Rules --> Execute[Execute Task]
-    Execute --> Document[Document Outcome in progress.md]
+    A[Start] --> B[Verify Context]
+    B --> C[Update codebase]
+    C --> D[Collect Feedback]
+    D --> F{User approved?}
+    F -- No --> A
+    F -- Yes --> G{Changes in relevant patterns?}
+    G -- No --> H[update progress.md]
+    G -- Yes --> I[Update system_patterns.md <br/> tech_context.md]
+    I --> H
 ```
 
 ### Act Mode Behavior
 
 1. **Re-read `active_context.md` and `progress.md`** to understand current focus and status.
 2. **Confirm task scope** and intended outcome before acting.
-3. Show your code suggestions **in the chat and codebase** and wait for user approval to implement.
+3. Show your code suggestions **in the chat and in the codebase** and wait for user approval to implement.
 4. **Terminal commands**
    - Don't run them
    - Write them on the chat and wait for user approval.
 5. If the task introduces a new pattern or decision:
-   - Pause to update `system_patterns.md` or `tech_context.md`.
+   - Pause to update `system_patterns.md` and `tech_context.md`.
    - Update `.cursor/rules` if behavior/strategy changes.
 6. **Execute the task cleanly and incrementally.** 
 7. After completing the task:
    - **Update `progress.md`** to reflect changes.
-   - **Log decisions** or **relevant notes** for the project as a whole in `.cursor/rules`.
-
----
-
-### 🧠 `/act` (Verbatim Directive)
-
-When the `/act` command is received:
-
-- Assume that planning is either unnecessary or already complete.
-- Immediately begin Act Mode workflow:
-  - Confirm `active_context.md` and `progress.md` are up to date.
-  - Validate scope with the user if there’s ambiguity.
-  - Execute the task carefully.
-  - Document outcome in `progress.md`.
-  - Log any key decisions in `active_context.md` or `.cursor/rules`.
+   - **Log relevant rules** to keep project compliant with `system_patterns.md` and `tech_context.md` in `.cursor/rules`.
 
 Do **not** ask planning questions. If uncertain about scope or decision, stop and ask for clarification instead of continuing.
 
@@ -185,8 +185,10 @@ Focus especially on `active_context.md` and `progress.md` as they hold the live 
 ---
 
 ## 📘 Project Intelligence: Rules as a Journal
+The `.cursor/rules` file acts as a **learning journal**. 
+It brings the rules that must be followed to comply with the project design patterns documented in `system_patterns.md` and `tech_context.md`.
 
-The `.cursor/rules` file acts as a **learning journal**. Document all meaningful discoveries that help future Cursor sessions:
+Document all meaningful rules that help future Cursor sessions:
 
 ```mermaid
 flowchart TD
@@ -219,7 +221,7 @@ This file grows smarter as the project evolves.
 
 ---
 
-## Software architecture Principles
+## Software architecture principles to be adopted
 - Ruby on Rails best practices regarding code organization: 
    - MVC
    - Helpers
