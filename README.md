@@ -1,6 +1,6 @@
 This README documents what is objective and the scaffold with the appropriate headers and placeholders for each file from the memory bank stucture.
 
-When updating the files, follow these instructions keeping the appropriate headers and placeholders (if any) to ensure the file is updated correctly.
+When updating the files, follow these instructions keeping the appropriate headers and placeholders (if any) to ensure the files are updated correctly.
 
 # project_brief.md
 - Describe the overall project goals
