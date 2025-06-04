@@ -1,4 +1,4 @@
-This README documents what what is objective and the scaffold with the appropriate headers and placeholders for each file from the memory bank stucture.
+This README documents what is objective and the scaffold with the appropriate headers and placeholders for each file from the memory bank stucture.
 
 When updating the files, follow this instructions keeping the appropriate headers and placeholders (if any) to ensure the file is updated correctly.
 
