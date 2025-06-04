@@ -6,6 +6,9 @@ When updating the files, follow this instructions keeping the appropriate header
 - Describe the overall project goals
 
 # product_context.md
+## Problem and Solution
+
+## Out of scope and No-Go
 - Describe what is the problem and what do you expect to achieve building the solution
 - Specify what is out of scope
 
@@ -16,8 +19,13 @@ When updating the files, follow this instructions keeping the appropriate header
 - Document any tech constraint
 
 # active_context.md
-- Describe what is the current work focus
+
 - Specify what is objective and what is out of scope
+## Current focus
+
+## Out of scope
+
+## Current challenges
 
 # progress.md
 
