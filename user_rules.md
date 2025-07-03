@@ -11,11 +11,11 @@ The memory bank consists of required core files and optional context files, all 
 
 ```mermaid
 flowchart TD
-    PB[project_brief.md] --> PC[product_context.md]
+    PB[project_brief.md] --> SC[scope_context.md]
     PB --> SP[system_patterns.md]
     PB --> TC[tech_context.md]
     
-    PC --> AC[active_context.md]
+    SC --> AC[active_context.md]
     SP --> AC
     TC --> AC
     
@@ -24,7 +24,7 @@ flowchart TD
 
 ### Core Files
 1. `project_brief.md`: core project goals
-2. `product_context.md`: problem and solution to be built 
+2. `scope_context.md`: problem and solution to be built 
 3. `system_patterns.md`: Architecture and design
 4. `tech_context.md`: Tech stack and constraints
 5. `active_context.md`: current work focus
@@ -47,7 +47,7 @@ flowchart TD
 You MUST read the following files in order:
 
 - `project_brief.md`
-- `product_context.md`
+- `scope_context.md`
 - `system_patterns.md`
 - `tech_context.md`
 - `active_context.md`
