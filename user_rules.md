@@ -23,14 +23,14 @@ flowchart TD
 ```
 
 ### Core Files
-1. `project_brief.md`: core project goals
-2. `scope_context.md`: problem and solution to be built 
-3. `system_patterns.md`: Architecture and design
-4. `tech_context.md`: Tech stack and constraints
-5. `active_context.md`: current work focus
-6. `progress.md`: completed tasks and next steps
+1. `project_brief.md`: core project goals.
+2. `scope_context.md`: problem and solution to be built. Current scope under development. 
+3. `system_patterns.md`: Architecture and design.
+4. `tech_context.md`: Tech stack and constraints.
+5. `active_context.md`: Current scope under development.
+6. `progress.md`: Completed scopes and next steps.
 
-`memory-bank/README.md` documents what is the scaffold with the appropriate headers and placeholders for each file from the memory bank stucture.
+`memory-bank/README.md` documents what is the scaffold with the appropriate headers, placeholders and key concepts for each file from the memory bank stucture. 
 
 ---
 
@@ -58,7 +58,7 @@ Never begin coding, planning, or refactoring without reading all of the above fi
 ---
 
 ## 🧭 `/plan` Command – Planner Mode
-Planner mode objective is to build a step-by-step plan build the functionality described in the `product_context.md` to meet the `project_brief.md` goals.
+Planner mode objective is to build a step-by-step plan build the functionality described in the `scope_context.md` to meet the `project_brief.md` goals.
 When asked to enter "Planner Mode" or when receiving a `/plan` command, follow the process below:
 
 ```mermaid
@@ -78,18 +78,19 @@ flowchart TD
 ### Planner Mode Behavior
 
 1. Fully re-read the memory bank before anything else.
-2. Ask 4–6 **clarifying questions** about the task or change request.
-3. Outline **key steps** to build the solution and **anticipate eventual bottlenecks** and **critical implementation decisions**.
+2. Ask 4–6 **clarifying questions** about the task or change request specified in the `scope_context.md`.
+3. Outline **key steps** to build the solution and **anticipate eventual bottlenecks** and **critical implementation decisions**. 
 4. Help the user understand the **complexity of the technical choices** and prioritize what is a **must have** from a nice **nice to have** to build the desired solution.
-5. Ensure the proposed architecture **follows the project design patterns**.
-6. Based on the answers, generate a **comprehensive step-by-step plan**.
-8. Ask the user to **approve the plan**
+5. Make sure the scopes are composed by integrated "slices" of work. 
+6. Ensure the proposed architecture **follows the project design patterns**.
+7. Based on the answers, generate a **comprehensive step-by-step plan**. 
+8. Ask the user to **approve the plan**.
 9. Update memory bank with the approved plan. 
    
 ---
 
 ## 🔧 `/prop` Command – Proposer Mode
-"Proposer mode" objective is to be an intermediary step between "Planner mode" and "Action mode". <br>
+"Proposer mode" objective is to be an intermediary step between "Planner mode" and "Act mode". <br>
 It must allow the user to compare the **existing codebase** with your **code suggestions**  for the tasks described `active_context.md` <br>
 It should help the user to provide any **feedbacks** for you **at code level** before implementation. <br>
 When asked to enter "Proposer Mode" or when receiving a `/prop` command, follow the process below:
@@ -109,20 +110,20 @@ flowchart TD
 ```
 
 ### Proposer Mode Behavior 
-1. **Re-read `active_context.md` and `progress.md`** to understand current focus and project overall progress.
+1. **Re-read `scope_context.md` and `active_context.md`** to understand current focus and scope progress.
 2. **File propostion and sugesions**
     - Do not make any changes or suggestion directly in the codebase.
     - Show your **suggestions only in the chat** to user.
 3. Wait for user feedback in the chat or directly in the proposed files.
 4. Incorporate feedbacks into your suggestions
-5. **Document** key architecture and design patterns in `system_patterns.md` and any relevant tech constraints in `tech_context.md` if they're relevant for the solution.
+5. **Document** key architecture and design patterns in `system_patterns.md` and any relevant tech constraints in `tech_context.md` if they're relevant for the solution and must be considered when building other projec scopes.
 6. Wait for `/act` command.
 
 ---
 
 ## 🔧 `/act` Command – Act Mode
 "Action mode" objective is to implement what is defined in the `active_context.md` based on the approved **codebase suggestions** from the "Proposer mode"
-When asked to enter "Action Mode" or when receiving a `/act` command, follow the streamlined execution workflow:
+When asked to enter "Act Mode" or when receiving a `/act` command, follow the streamlined execution workflow:
 
 ```mermaid
 flowchart TD
@@ -132,7 +133,7 @@ flowchart TD
     D --> F{User approved?}
     F -- No --> A
     F -- Yes --> G{Changes in relevant patterns?}
-    G -- No --> H[update progress.md]
+    G -- No --> H[update active_context <br> update progress.md]
     G -- Yes --> I[Update system_patterns.md <br/> tech_context.md]
     I --> H
 ```
@@ -150,7 +151,7 @@ flowchart TD
    - Update `.cursor/rules` if behavior/strategy changes.
 6. **Execute the task cleanly and incrementally.** 
 7. After completing the task:
-   - **Update `progress.md`** to reflect changes.
+   - **Update `active_context.md` and `progress.md`** to reflect changes.
    - **Log relevant rules** to keep project compliant with `system_patterns.md` and `tech_context.md` in `.cursor/rules`.
 
 Do **not** ask planning questions. If uncertain about scope or decision, stop and ask for clarification instead of continuing.
