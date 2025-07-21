@@ -2,23 +2,46 @@ This README documents what is objective and the scaffold with the appropriate he
 When updating the files, follow these instructions keeping the appropriate headers and placeholders (if any) to ensure the files are updated correctly.
 
 # project_brief.md
-
-## Problem and objectives
 - Describe the overall project goals.
+
+## Problem 
 - What is the problem the project aiming to to solve and why we want to solve it?
+
+## Objectives
 - What result we want to see in the end of the project?
 
+## Organization
+Some project have very clear boundaries since the begining.
+When it's case we use this section to explain give an overview of projec phases.
+In general phases are a feature, a user story, a subsystem.
+On this Heading we list the project phases:
+
+- Phase 1
+- Phase 2
+- Phase N
+  
+## Phase 1: Phase name
+Each phase is described at a high level on this section
+
+### Objective
+Which are the phase objetives?
+
+### Key elements
+- What are the desired user flows or key solution outputs?
+
+### Out of Scope and No Gos
+- Situations, edge cases, or any technical implementation we're chosing not to build in the current scope
 
 # scope_context.md
 - A project is composed by one or more scopes.
-- Scopes are integrated "slices" of work. Think of it like phases with very integrated pieces of work. They reflect meaningful parts of the problem that can be completed **independently** or very little dependence on other project scopes. Ideally they integrate frontend and backend.
+- Scopes are integrated "slices" of work. Think of it like phases with very integrated pieces of work. They reflect meaningful parts of the problem that can be completed **independently** or with very little dependence on other project scopes. Ideally they integrate frontend and backend.
+- Each scope delivers a clear and testable increment, they easy code review process by avoiding context switching and keeping code changes under a trackable amount of files (less than 10 files ideally).
 - This section explains in more detail the scope under development on the project right now.
 
 
 ## Scope objective
 - What is the scope under development on the project right now?
 - This is the actual piece or "slice" of work being built
-- What are desired user flows or key solution outputs?
 
 ## Key elements
 - What are the key solution elements that define the current scope?
