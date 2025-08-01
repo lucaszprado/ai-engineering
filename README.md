@@ -38,10 +38,16 @@ Which are the phase objetives?
 - Each scope delivers a clear and testable increment, they easy code review process by avoiding context switching and keeping code changes under a trackable amount of files (less than 10 files ideally).
 - This section explains in more detail the scope under development on the project right now.
 
+## Scope Name
+- What is the scope under development on the project right now?
 
 ## Scope objective
-- What is the scope under development on the project right now?
-- This is the actual piece or "slice" of work being built
+- This is the actual piece or "slice" of work being built.
+- Very objetive phrase descrbing what needs to be done.
+
+## Scope Description
+- Details about what will done
+- Why this scope is needed
 
 ## Key elements
 - What are the key solution elements that define the current scope?
