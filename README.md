@@ -51,21 +51,26 @@ Which are the phase objetives?
 - Situations, edge cases, or any technical implementation we're chosing not to build in the current scope
 
 # system_pattern.md
-- This section documents what are the overall design patterns in the project
+- This section documents what are the overall **design patterns in the project**
 - What is the project architecture? What the architectural choices that build the logic required in the project?
 
 # tech_constraints.md
-- This section documents stack choices in the project
+- This section documents **stack choices in the project**
 - What tecnical solutions we must use to meet the project and scope objectives?
 
 # active_context.md
 - A scope is composed by value delivery tasks - VDT.
 - VDT are required pieces of work to complete a given scope.
-- This section documents what are the needed VDT needed to complete a given scope
+- This section documents what are the needed VDT needed to complete a given scope and any relevant detail to be considered to build the VDTs
+
+## VDTs
 - Use the format below to document completed and pending value delivery tasks <br> <br>
 [ ] Value Delivery task to be done <br>
 [x] Value Delivery task Done
 
+## Important notes regarding the building phase or implementation of this scope
+
+### Issue N
 
 # progress.md
 - Document what are the required scopes to complete the overall project and not only the current scope specified in the scope objective section.
@@ -74,10 +79,12 @@ Which are the phase objetives?
 - This section is updated as we move forward in the project. We might split a given scope into new scopes, discard a given scope etc.
 - If project has more than one phase, we group scopes under each phase
 
-## Phase n
+## Phase N
 ### Completed
 - Scope 1
 - Scope 2
+
+### Under Development
 
 ### To be done
 - Scope 3
