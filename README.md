@@ -20,7 +20,7 @@ On this Heading we list the project phases:
 - Phase 2
 - Phase N
   
-## Phase 1: Phase name
+## Phase N: Phase name
 Each phase is described at a high level on this section
 
 ### Objective
@@ -72,11 +72,13 @@ Which are the phase objetives?
 - This section is documented at scope level and not task level.
 - Follow the placeholders below to document the overall progress
 - This section is updated as we move forward in the project. We might split a given scope into new scopes, discard a given scope etc.
+- If project has more than one phase, we group scopes under each phase
 
-## Completed
+## Phase n
+### Completed
 - Scope 1
 - Scope 2
 
-## To be done
+### To be done
 - Scope 3
 - Scope 4
