@@ -14,7 +14,9 @@ Chat name: [Project-BX] Project Name YYYYMMDD (e.g. [Project-B1] Cluster and Fil
 3. `active_context.md` is empty -> There's no VDT
 
 # Second and next interactions
-Chat name: [Scope-BX] Scope Name YYYYMMDD (e.g. [Scope-B1] FIlter and Update Logic 20250729)
+Chat name: [Scope-BX] Scope Name YYYYMMDD (e.g. [Scope-B1] Filter and Update Logic 20250729) -> Keep the main scope logic with core files. Don't ask about details on it.
+Derived Chats to detail scope [Status | Scope-BX] Scope Name YYYYMMDD (e.g. [Done | Scope-B4] FIlter and Update Logic 20250729)
+Derived Chats to discuss VDT specific issues [Status | Scope-BX | X] Scope Name 20250729 (e.g. [Done | Scope-B4 | 1] FIlter and Update Logic 20250729)
 ## Objectives
 - Discuss the implementation of the VDT (individually or in group)
 - Build the code to implement each VDT
