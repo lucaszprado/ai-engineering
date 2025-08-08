@@ -43,11 +43,11 @@ Which are the phase objetives?
 
 ## Scope objective
 - This is the actual piece or "slice" of work being built.
-- Very objetive phrase descrbing what needs to be done.
+- High level objetive phrase descrbing what needs to be done.
 
 ## Scope Description
-- Details about what will done
 - Why this scope is needed
+- How does it connect to others scopes delivered and to be done?
 
 ## Key elements
 - What are the key solution elements that define the current scope?
