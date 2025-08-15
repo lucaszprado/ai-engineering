@@ -8,10 +8,10 @@ Chat name: [Project-BX] Project Name YYYYMMDD (e.g. [Project-B1] Cluster and Fil
 - Organize VDT in scopes and in a logical execution sequence
 - Fill-up `active_context.md` and `progress.md`
 
-## Key instructions and milestones
-1. `project_bref.md`
-2. `scope_context.md` is the first phase of the projct (if you broke the project into phases) or leave it blank
-3. `active_context.md` is empty -> There's no VDT
+## Key instructions to build the prompt
+1. `project_bref.md` `tech_context` and `system_patterns` should bring the project level information -> See ReadMe.
+2. `scope_context.md` Describe the target project phase (if you broke the project into phases). If the project has a single phase, leave it blank.
+3. `active_context.md`: blank -> There's no VDT yet
 
 # Second and next interactions
 - Chat name: [Scope-BX] Scope Name YYYYMMDD (e.g. [Scope-B1] Filter and Update Logic 20250729) -> Keep the main scope logic with core files. Don't ask about details on it.
@@ -22,9 +22,10 @@ Chat name: [Project-BX] Project Name YYYYMMDD (e.g. [Project-B1] Cluster and Fil
 - Build the code to implement each VDT
 
 
-## Key instructions and milestones
-1. `project_bref.md` keeps the same: describe overall project ans list phases
-2. `scope_context.md` now describes the scope under development (not the first phase of the project anymore)
-3. `active_context.md` is pre-filled with VDTs descovered in the first interaction
-4. `progress.md` updated with current project achievement
+## Key instructions to build the prompt
+1. `project_bref.md` keeps the same structure from the first prompt: describe overall project ans list phases.
+2. `tech_context` and `system_patterns` brings only project level information.
+3. `scope_context.md` now describes the scope under development (not the first phase of the project anymore)
+4. `active_context.md` is pre-filled with VDTs descovered in the first interaction
+5. `progress.md` updated with current project achievement
 
