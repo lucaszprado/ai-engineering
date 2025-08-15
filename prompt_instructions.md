@@ -10,7 +10,8 @@ Chat name: [Project-BX] Project Name YYYYMMDD (e.g. [Project-B1] Cluster and Fil
 
 ## Key instructions to build the prompt
 1. `project_bref.md` `tech_context` and `system_patterns` should bring the project level information -> See ReadMe.
-2. `scope_context.md` Describe the target project phase (if you broke the project into phases). If the project has a single phase, leave it blank.
+2. `scope_context.md` Describe the target project phase (if you broke the project into phases). Use the `scope_context.md` template do describe the phase. <br>
+If the project has a single phase, leave it blank.
 3. `active_context.md`: blank -> There's no VDT yet
 
 # Second and next interactions
