@@ -29,7 +29,7 @@ Which are the phase objetives?
 ### Key elements
 - What are the desired user flows or key solution outputs?
 
-### Out of Scope and No Gos
+### Out of Scope, No Gos and Open Questions
 - Situations, edge cases, or any technical implementation we're chosing not to build in the current scope
 
 # scope_context.md
