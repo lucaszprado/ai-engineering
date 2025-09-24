@@ -2,7 +2,7 @@
 - An interaction is a chat
 
 # First Interaction
-Chat name: [Project-BX] Project Name YYYYMMDD (e.g. [Project-B1] Cluster and Filter )
+Chat name: [Project-BX] Project Name YYYYMMDD (e.g. [Project-B1] Cluster and Filter 20250815)
 ## Objective
 - Discover / List all the projects VDT
 - Organize VDT in scopes and in a logical execution sequence
