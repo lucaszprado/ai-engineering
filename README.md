@@ -21,7 +21,8 @@ On this Heading we list the project phases:
 - Phase N
   
 ## Phase N: Phase name
-Each phase is described at a high level on this section
+Each phase is described at a high level on this section.
+In general phases are a feature, a user story, a subsystem. Our user stories pages can be used to describe the phase.
 
 ### Objective
 Which are the phase objetives?
