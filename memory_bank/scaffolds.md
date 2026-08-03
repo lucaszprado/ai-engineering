@@ -132,9 +132,9 @@ The following is an example of how a `scope_context.md` file may look.
 
 ## Purpose
 This document summarizes architectural patterns and design decisions used across the project:
-i) Key patterns used in the repo
-ii) Pre-selected patterns to be used in project (mapped when making the discovery about the project)
-iii) Key pattern decisions made in the course or the project.
+- i) Key patterns used in the repo
+- ii) Pre-selected patterns to be used in project (mapped when making the discovery about the project)
+- iii) Key pattern decisions made in the course or the project.
 
 These patterns should guide consistent implementation across scopes.
 
@@ -142,12 +142,9 @@ These patterns should guide consistent implementation across scopes.
 
 ```md
 # System Patterns
-- Patterns used in this repo that are relevant to the current project
-- Pre-selected patterns to be used in this project
 
 ## Current Patterns
 - Architectural patterns used in this repo that are relevant to the current project
-- Pre-selected patterns to be used in this project
 
 ## Pre-selected patterns
 - Along the projet we might need to make pattern decisions to develiver the features and behaviors we want.
@@ -239,13 +236,14 @@ The following is an example of how a `system_pattern.md` file may look.
 
 ## Purpose
 This document summarizes:
-i) Key technologies used in the repo
-ii) Pre-selected technologies to be used in project (mapped when making the discovery about the project)
-iii) Key technological decisions made in the course or the project.
+- i) Key technologies used in the repo
+- ii) Pre-selected technologies to be used in project (mapped when making the discovery about the project)
+- iii) Key technological decisions made in the course or the project.
 
 When a new technological decision is made, we register:
-- the context of hte decision: what were the requirements?
+- the context of the decision: what were the requirements?
 - the selected technology and other (if any) alternatives considered
+- what decision we made and why
 - how the decision is used or presented in the system
 
 This helps maintain consistency and supports future migrations or refactors.
@@ -255,8 +253,7 @@ This helps maintain consistency and supports future migrations or refactors.
 ```md
 
 ## Current Stack
-- Technologies used in this repo that are relevant to the current project
-- Pre-selected technologies to be used in this project
+- Technologies already used in this repo that are relevant to the current project
 
 
 ## Pre-selected technologies
@@ -372,9 +369,9 @@ This file should reflect:
 
 ## Required Structure
 **Value Delivery Task Status Legend**
-[ ] VDT to be done
-[/] VDT in progress
-[x] VDT Completed
+[ ] VDT to be done <br>
+[/] VDT in progress <br>
+[x] VDT Completed <br>
 [o] VDT Aborted / archived / merged
 
 ```md
@@ -459,9 +456,9 @@ Notes:
 ## Required Structure
 
 **Scope Status Legend**
-[x] Completed
-[o] Aborted / archived / merged
-[/] In progress
+[x] Completed <br>
+[o] Aborted / archived / merged <br>
+[/] In progress <br>
 [ ] Not started
 
 ```md
@@ -487,7 +484,8 @@ If project has no phases, no need to classify scopes into phases.
 - Description: What is the decision or issue?
 - Impact: Why does it matter for the overall project?
 - Options: What are the possible approaches?
-- Next Step: What is needed to move forward?
+- Next Step: What incremental path we can take to make this decision?. If decision already made. Leave it blank.
+- Decision/Outcome: What option we chose for the decision or issue? Why we chose this option? If no decision yet. Leave it blank.
 
 ```
 
@@ -521,11 +519,15 @@ The following is an example of how a `progress.md` file may look.
   - AWS Textract (structured, reliable, less flexible)
   - LLM-based OCR (flexible, potentially more accurate, higher cost)
 - Next Step: Run benchmark on real user PDFs
+- Decision/Outcome:
 
 #### Decision 2: Sync vs Async Processing
 - Status: Decided
-- Description: Ingestion should be async.
+- Description: How should our ingestion run?
 - Impact: Affects performance and system scalability
-- Implementation Reference: `app/jobs/ingestion_pipeline_job`
-- Next Step: Reuse `app/jobs/ingestion_pipeline_job` when planning the ingestion pipeline.
+- Options:
+  - Sync
+  - Async
+- Next Step:
+- Decision/Outcome: Processing should be async. We want to maximize performance.
 ```
