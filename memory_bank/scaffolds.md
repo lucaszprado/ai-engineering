@@ -41,16 +41,6 @@ Users cannot easily unify and query their personal health records across provide
 ## Objectives
 Create a system that ingests health documents, normalizes data, and presents a longitudinal patient view.
 
-## Organization
-- Phase 1: Document ingestion
-- Phase 2: Data normalization
-- Phase 3: Search and retrieval
-
-## Phase 1: Document ingestion
-
-### Objectives
-Allow users to upload medical files from multiple providers.
-
 ### Key Elements
 - PDF upload flow
 - DICOM upload flow
